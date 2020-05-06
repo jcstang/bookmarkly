@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "siteName": "Github",
+        "siteUrl": "https://www.github.com"
+    },
+    {
+        "id": 2,
+        "siteName": "Facebook",
+        "siteUrl": "https://www.facebook.com"
+    },
+    {
+        "id": 3,
+        "siteName": "Netflix",
+        "siteUrl": "https://www.netflix.com"
+    },
+    {
+        "id": 4,
+        "siteName": "youtube",
+        "siteUrl": "https://www.youtube.com"
+    }
+]

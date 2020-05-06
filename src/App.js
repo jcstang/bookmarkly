@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import BookmarkList from './components/BookmarkList/BookmarkList';
+import listOfSites from './data.json';
+import BookmarkForm from './components/BookmarkForm/BookmarkForm';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    bookmarks: listOfSites
+  }
+
+  destroyBookmark = bookmarkIndex => {
+    console.log(`destroy this id: ${bookmarkIndex}`);
+    /* TODO: delete bookmark based off of id */
+  }
+  
+  render() {
+    return (
+      <div className="container">
+        <BookmarkForm />
+        <BookmarkList
+          bookmarks={this.state.bookmarks}
+          destroyBookmark={this.destroyBookmark}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
