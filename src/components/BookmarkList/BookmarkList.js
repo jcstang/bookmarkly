@@ -8,8 +8,8 @@ export default function BookmarkList(props) {
                 props.bookmarks.map((aBookmark, index) => (
                     <BookmarkListItem 
                         theBookmark={aBookmark}
-                        key={aBookmark.id}
-                        index={index}
+                        key={index}
+                        id={aBookmark.id}
                         destroyBookmark={props.destroyBookmark}
                     />
                 ))

@@ -5,18 +5,20 @@ class BookmarkForm extends Component {
         super(props);
 
         this.saveBookmark = props.saveBookmark;
-        // this.state = {
-        //     bookmarkName: '',
-        //     bookmarkUrl: ''
-        // }
+        this.state = {
+            id: props.nextId,
+            bookmarkName: '',
+            bookmarkUrl: ''
+        }
     }
 
-    state = {
-        bookmarkName: '',
-        bookmarkUrl: ''
-    }
+    // state = {
+    //     id: null,
+    //     bookmarkName: '',
+    //     bookmarkUrl: ''
+    // }
     
-    handleInputChange(event) {
+    handleInputChange = (event) => {
         const { name, value } = event.target;
 
         this.setState({
@@ -24,28 +26,16 @@ class BookmarkForm extends Component {
         })
     }
 
-    handleFormSubmit(event) {
+    handleFormSubmit = (event) => {
         event.preventDefault();
         this.saveBookmark(this.state);
 
         this.setState({
+            id: null,
             bookmarkName: '',
             bookmarkUrl: ''
         })
     }
-
-    /* error - get a cannot read property 'setState' of undefined */
-    handleFormSubmit(event) {
-        /* code here */
-    }
-
-    // VS
-
-    /* this works */
-    handleFormSubmit = (event) => {
-        /* code here */
-    }
-
 
 
     render() {

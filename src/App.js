@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import BookmarkList from './components/BookmarkList/BookmarkList';
-import listOfSites from './data.json';
 import BookmarkForm from './components/BookmarkForm/BookmarkForm';
 import './App.css';
 
 class App extends Component {
   state = {
     //bookmarks: listOfSites
+    nextAvailableId: 5,
     bookmarks: [
       {
         id: 1,
@@ -32,9 +32,15 @@ class App extends Component {
   }
 
   saveBookmark = (bookmark) => {
-    const newBookmarks = [...this.state.bookmarks, ...bookmark];
+    // could use concat here too.
+    const newBookmarks = [...this.state.bookmarks, bookmark];
     
-    this.setState({ bookmarks: newBookmarks });
+    const setNewId = this.state.nextAvailableId + 1;
+
+    this.setState({
+      nextAvailableId: setNewId,
+      bookmarks: newBookmarks 
+    });
   }
 
   destroyBookmark = bookmarkIndex => {
@@ -43,13 +49,17 @@ class App extends Component {
   }
   
   render() {
+    console.log(this.state.bookmarks);
     return (
       <div className="container">
-        <BookmarkForm saveBookmark={this.saveBookmark} />
+        <BookmarkForm 
+          saveBookmark={this.saveBookmark}
+          nextId={this.state.nextAvailableId}
+        />
         <BookmarkList
           bookmarks={this.state.bookmarks}
           destroyBookmark={this.destroyBookmark}
-        />
+          />
       </div>
     );
   }

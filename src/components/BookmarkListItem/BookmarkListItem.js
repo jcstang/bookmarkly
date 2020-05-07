@@ -18,7 +18,7 @@ export default function BookmarkListItem(props) {
                 {props.theBookmark.bookmarkName}
             </a>
             <span>&nbsp;&nbsp;&nbsp;</span>
-            <a href="#noop" onClick={childDeleteBookmarkClick}>Delete</a>
+            <a href="#noop" onClick={childDeleteBookmarkClick}><i className="fas fa-times"></i></a>
         </li>
     );
 }
