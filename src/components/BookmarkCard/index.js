@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 
 export default function BookmarkCard(props) {
 
@@ -10,15 +11,6 @@ export default function BookmarkCard(props) {
     }
 
     return (
-        // <div className="container-fluid">
-        //     <div className="card">
-        //         <div className="card-body">
-        //             <h5 className="card-title">{props.theBookmark.bookmarkName}</h5>
-        //             <a href="noop" onClick={childDeleteBookmarkClick} className="btn btn-danger">Delete</a>
-        //             <a href={props.theBookmark.bookmarkUrl} className="btn btn-primary">Go</a>
-        //         </div>
-        //     </div> 
-        // </div>
         <div className="container-fluid card">
             <div className="row">
                 <div className="card-body col-10">
@@ -30,15 +22,5 @@ export default function BookmarkCard(props) {
                 </div>
             </div>
         </div>
-        // <li>
-        //     <a 
-        //         href={props.theBookmark.bookmarkUrl} 
-        //         target="_blank" 
-        //         rel="noopener noreferrer">
-        //         {props.theBookmark.bookmarkName}
-        //     </a>
-        //     <span>&nbsp;&nbsp;&nbsp;</span>
-        //     <a href="#noop" onClick={childDeleteBookmarkClick}><i className="fas fa-times"></i></a>
-        // </li>
     );
 }

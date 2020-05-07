@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.css';
 
 class BookmarkForm extends Component {
     constructor(props) {
@@ -40,7 +41,7 @@ class BookmarkForm extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container form-container">
                 <form onSubmit={this.handleFormSubmit}>
                     <div className="form-group">
                         <label htmlFor="bookmark-name">Bookmark Name</label>
