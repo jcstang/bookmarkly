@@ -12,10 +12,10 @@ export default function BookmarkListItem(props) {
     return(
         <li>
             <a 
-                href={props.theBookmark.siteUrl} 
+                href={props.theBookmark.bookmarkUrl} 
                 target="_blank" 
                 rel="noopener noreferrer">
-                {props.theBookmark.siteName}
+                {props.theBookmark.bookmarkName}
             </a>
             <span>&nbsp;&nbsp;&nbsp;</span>
             <a href="#noop" onClick={childDeleteBookmarkClick}>Delete</a>

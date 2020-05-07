@@ -6,7 +6,35 @@ import './App.css';
 
 class App extends Component {
   state = {
-    bookmarks: listOfSites
+    //bookmarks: listOfSites
+    bookmarks: [
+      {
+        id: 1,
+        bookmarkName: "Github",
+        bookmarkUrl: "https://www.github.com"
+      },
+      {
+        id: 2,
+        bookmarkName: "Facebook",
+        bookmarkUrl: "https://www.facebook.com"
+      },
+      {
+        id: 3,
+        bookmarkName: "Netflix",
+        bookmarkUrl: "https://www.netflix.com"
+      },
+      {
+        id: 4,
+        bookmarkName: "youtube",
+        bookmarkUrl: "https://www.youtube.com"
+      }
+    ]
+  }
+
+  saveBookmark = (bookmark) => {
+    const newBookmarks = [...this.state.bookmarks, ...bookmark];
+    
+    this.setState({ bookmarks: newBookmarks });
   }
 
   destroyBookmark = bookmarkIndex => {
@@ -17,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <BookmarkForm />
+        <BookmarkForm saveBookmark={this.saveBookmark} />
         <BookmarkList
           bookmarks={this.state.bookmarks}
           destroyBookmark={this.destroyBookmark}
