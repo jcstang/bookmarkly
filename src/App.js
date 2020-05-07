@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import BookmarkList from './components/BookmarkList/BookmarkList';
-import BookmarkForm from './components/BookmarkForm/BookmarkForm';
+import BookmarkList from './components/BookmarkList';
+import BookmarkForm from './components/BookmarkForm';
 import './App.css';
 
 class App extends Component {

@@ -1,6 +1,6 @@
 import React from 'react';
-import BookmarkListItem from '../BookmarkListItem/BookmarkListItem';
-import BookmarkCard from '../BookmarkCard/BookmarkCard';
+import BookmarkListItem from '../BookmarkListItem';
+import BookmarkCard from '../BookmarkCard';
 
 export default function BookmarkList(props) {
     return (
