@@ -46,6 +46,11 @@ class App extends Component {
   destroyBookmark = bookmarkIndex => {
     console.log(`destroy this id: ${bookmarkIndex}`);
     /* TODO: delete bookmark based off of id */
+    const updatedBookmarkList = this.state.bookmarks.filter(function(bookmark, index) {
+      return index !== bookmarkIndex;
+    });
+
+    this.setState({ bookmarks: updatedBookmarkList });
   }
   
   render() {
