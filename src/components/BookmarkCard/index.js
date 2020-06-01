@@ -15,7 +15,12 @@ export default function BookmarkCard(props) {
             <div className="row">
                 <div className="card-body col-10">
                     <h2>{props.theBookmark.bookmarkName}</h2>
-                    <a href={props.theBookmark.bookmarkUrl} className="btn btn-primary">Go</a>
+                    <a 
+                        href={props.theBookmark.bookmarkUrl} 
+                        className="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Go</a>
                 </div>
                 <div className="col-2 card-body align-self-end">
                     <a href="noop" onClick={childDeleteBookmarkClick} className="btn btn-danger">Delete</a>
